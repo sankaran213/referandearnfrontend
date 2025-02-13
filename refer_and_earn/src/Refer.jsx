@@ -34,11 +34,14 @@ export default function ReferAndEarn() {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch("http://localhost:3000/referral", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(form), // Send the form data correctly
-        });
+        const response = await fetch(
+          "https://referandearn-tan.vercel.app/referral",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form), // Send the form data correctly
+          }
+        );
 
         const data = await response.json();
         if (response.ok) {
